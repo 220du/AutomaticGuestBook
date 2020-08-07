@@ -63,15 +63,18 @@ class Gui():
         self.destroy()
         self.sort_num = 0
         self.sort_color = 0
-        self.list = get_list('Date', self.sort_num)
         Main_Screen_background = Get_label.image_label(
             self, "main_bg.png", 0, 0)
-        # User_button = Get_label.image_button(
-        #     self, "btn1.png", 20, 290, self.no_action)
+        User_button = Get_label.image_button(
+            self, "btn1.png", 20, 290, self.no_action)
         List_button = Get_label.image_button(
-            self, "btn2.png", 80, 290, self.list_screen1)
+            self, "btn2.png", 280, 290, self.reload)
         Exit_button = Get_label.image_button(
-            self, "btn3.png", 480, 290, self._quit)
+            self, "btn3.png", 540, 290, self._quit)
+
+    def reload(self):
+        self.list = get_list('Date', self.sort_num)
+        self.list_screen1()
 
     def list_screen1(self):
         self.destroy()

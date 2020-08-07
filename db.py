@@ -56,14 +56,8 @@ def get_list(sort, desc):
 
 def input_Name(num):
     newWin = Tk()
-    screen_width = newWin.winfo_screenwidth()
-    screen_height = newWin.winfo_screenheight()
-    x = (screen_width/2) - (width/2)
-    y = (screen_height/2) - (height/2) - 25
-    newWin.geometry('%dx%d+%d+%d' % (width, height, x, y))
     newWin.withdraw()
     name = askstring('회원가입', '이름을 입력해주세요', parent=newWin)
-    print(name)
     if name == None:
         exit_message = tkinter.messagebox.showinfo(
             "취소", "회원가입이 취소되었습니다.")
