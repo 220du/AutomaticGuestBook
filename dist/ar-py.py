@@ -11,6 +11,7 @@ import sqlite3
 import tkinter.messagebox
 from Make_label import Get_label
 from db import *
+import pyglet
 
 
 class Gui():
@@ -25,6 +26,8 @@ class Gui():
         arduino_thread = threading.Thread(target=self.arduino)
         arduino_thread.daemon = True
         arduino_thread.start()
+        pyglet.font.add_file("GodoM.otf")
+        pyglet.font.add_file("HoonDdukbokki.ttf")
         self.main_screen()
         self.screen.mainloop()
 
@@ -42,7 +45,7 @@ class Gui():
 
     def arduino(self):
         ser = serial.Serial(
-            port='COM7',
+            port='COM12',
             baudrate=9600,
         )
         self.last_res = ''
