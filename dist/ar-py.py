@@ -45,7 +45,7 @@ class Gui():
 
     def arduino(self):
         ser = serial.Serial(
-            port='COM12',
+            port='COM7',
             baudrate=9600,
         )
         self.last_res = ''
